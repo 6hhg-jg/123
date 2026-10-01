@@ -19,12 +19,15 @@ jobs:
       - name: Unzip source code
         run: |
           ZIP=$(ls *.zip | head -n 1)
-          echo "找到压缩包: $ZIP"
+          echo "found: $ZIP"
           unzip -o "$ZIP" -d workspace
           if [ -d workspace/AJingBeanAppWidget-build ]; then
             mv workspace/AJingBeanAppWidget-build workspace2 && rm -rf workspace && mv workspace2 workspace
           fi
           ls workspace
+
+      - name: Patch repositories
+        run: echo ZGVwZW5kZW5jeVJlc29sdXRpb25NYW5hZ2VtZW50IHsKICAgIHJlcG9zaXRvcmllc01vZGUuc2V0KFJlcG9zaXRvcmllc01vZGUuRkFJTF9PTl9QUk9KRUNUX1JFUE9TKQogICAgcmVwb3NpdG9yaWVzIHsKICAgICAgICBtYXZlbiB7IHVybCAiaHR0cHM6Ly9tYXZlbi5hbGl5dW4uY29tL3JlcG9zaXRvcnkvcHVibGljIiB9CiAgICAgICAgbWF2ZW4geyB1cmwgImh0dHBzOi8vbWF2ZW4uYWxpeXVuLmNvbS9yZXBvc2l0b3J5L2dvb2dsZSIgfQogICAgICAgIG1hdmVuIHsgdXJsICJodHRwczovL21hdmVuLmFsaXl1bi5jb20vcmVwb3NpdG9yeS9qY2VudGVyIiB9CiAgICAgICAgZ29vZ2xlKCkKICAgICAgICBtYXZlbkNlbnRyYWwoKQogICAgICAgIGpjZW50ZXIoKQogICAgICAgIG1hdmVuIHsgdXJsICJodHRwczovL2ppdHBhY2suaW8iIH0KICAgIH0KfQpyb290UHJvamVjdC5uYW1lID0gIkppbmdCZWFuQXBwV2lkZ2V0IgppbmNsdWRlICc6YXBwJwo= | base64 -d > workspace/settings.gradle
 
       - name: Grant execute permission for gradlew
         working-directory: workspace
