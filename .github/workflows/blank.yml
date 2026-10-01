@@ -1,0 +1,42 @@
+name: Android Build
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Unzip source code
+        run: |
+          ZIP=$(ls *.zip | head -n 1)
+          echo "找到压缩包: $ZIP"
+          unzip -o "$ZIP" -d workspace
+          if [ -d workspace/AJingBeanAppWidget-build ]; then
+            mv workspace/AJingBeanAppWidget-build workspace2 && rm -rf workspace && mv workspace2 workspace
+          fi
+          ls workspace
+
+      - name: Grant execute permission for gradlew
+        working-directory: workspace
+        run: chmod +x gradlew
+
+      - name: Build Debug APK
+        working-directory: workspace
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: jingdou-apk
+          path: workspace/app/build/outputs/apk/debug/*.apk
+
