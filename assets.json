@@ -1,0 +1,13 @@
+{
+  "urls": [
+    {
+      "name": "EasyTV主力",
+      "url": "assets://jbxa/jbxa.json"
+    },
+  
+    {
+      "name": "玄珠",
+      "url": ""
+    }
+  ]
+}
