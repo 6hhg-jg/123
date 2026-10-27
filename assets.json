@@ -4,7 +4,22 @@
     "wallpaper" : "http://127.0.0.1:9978/proxy?do=wallpaper",
     "danmaku" : "http://127.0.0.1:5266/danmu/webhtv?name={name}&episode={episode}",
     "sites": [
-   
+    {
+      "key" : "Douban",
+      "name" : "🌕️┆片单┆精选",
+      "type" : 3,
+      "api" : "csp_PianDan",
+      "searchable" : 1,
+      "indexs" : 1,
+      "quickSearch" : 1,
+      "filterable" : 0,
+      "ext" : {
+        "home" : {
+          "douban" : "https://tc-new.z.wiki/autoupload/k2fxc/20260918/r68R/douban.json",
+          "tmdb" : "https://tc-new.z.wiki/autoupload/k2fxc/20260918/yAKC/tmdb.json"
+        }
+      }
+    },
      {
             "key": "Wwys",
             "name": "🍓┆免费仅个人使用┆禁止商用请勿付费",
