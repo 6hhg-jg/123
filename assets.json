@@ -366,30 +366,7 @@
             "group": "3",
             "api": "https://yydsys.top/duo/js/聚合短剧.js"
         },
-        {
-            "key": "超级短剧",
-            "name": "超级丨短剧",
-            "type": 3,
-            "api": "http://203.135.100.107:8866/asdasd/py/FishDuanju.py",
-            "searchable": 1,
-            "changeable": 0,
-            "quickSearch": 1,
-            "group": 2,
-            "filterable": 1,
-            "playerType": 2
-        },
-        {
-            "key": "好看短剧",
-            "name": "好看丨短剧",
-            "type": 3,
-            "api": "http://203.135.100.107:8866/asdasd/py/HHkk.py",
-            "searchable": 1,
-            "changeable": 0,
-            "quickSearch": 1,
-            "group": 2,
-            "filterable": 1,
-            "playerType": 2
-        },
+
        
         {
             "key": "wangyi",
@@ -424,22 +401,7 @@
             "quickSearch": 1,
             "filterable": 1
         },
-        {
-            "key": "ysp",
-            "name": "央视｜直播",
-            "type": 3,
-            "api": "http://203.135.100.107:8866/asdasd/xinpy/央视网.py",
-            "searchable": 0,
-            "changeable": 1,
-            "group": 5,
-            "quickSearch": 0,
-            "filterable": 1,
-            "style": {
-                "type": "rect",
-                "ratio": 1.333
-            },
-            "playerType": 2
-        },
+
         {
             "key": "xina",
             "name": "哔哩┃直播",
